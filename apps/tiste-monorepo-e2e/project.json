@@ -1,0 +1,30 @@
+{
+  "name": "tiste-monorepo-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/tiste-monorepo-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/tiste-monorepo-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "tiste-monorepo:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "tiste-monorepo:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "tiste-monorepo:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "implicitDependencies": ["tiste-monorepo"],
+  "tags": []
+}
