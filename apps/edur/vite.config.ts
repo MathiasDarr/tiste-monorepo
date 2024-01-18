@@ -5,11 +5,14 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/tiste-monorepo',
+  cacheDir: '../../node_modules/.vite/apps/edur',
 
   server: {
     port: 4200,
     host: true,
+    watch: {
+      usePolling: true
+    }
   },
 
   preview: {
@@ -25,7 +28,7 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: '../../dist/apps/tiste-monorepo',
+    outDir: '../../dist/apps/edur',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -42,7 +45,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/tiste-monorepo',
+      reportsDirectory: '../../coverage/apps/edur',
       provider: 'v8',
     },
   },

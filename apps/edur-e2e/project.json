@@ -1,0 +1,30 @@
+{
+  "name": "edur-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/edur-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/edur-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "edur:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "edur:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "edur:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "implicitDependencies": ["edur"],
+  "tags": []
+}

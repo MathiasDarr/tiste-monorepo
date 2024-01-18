@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tiste-monorepo/orders": ["libs/orders/src/index.ts"],
+      "@tiste-monorepo/products": ["libs/products/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
