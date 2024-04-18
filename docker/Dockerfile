@@ -23,8 +23,6 @@ WORKDIR /usr/share/nginx/html
 RUN apt-get update -y && apt-get install jq -y
 
 # COPY --from=build /app/scripts/
-
-
 # RUN chmod +x /docker-entrypoint.d/populate_react_config.sh
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN chown -R nginx:nginx /usr/share/nginx/html

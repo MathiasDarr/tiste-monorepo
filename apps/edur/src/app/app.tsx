@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Route, Routes, Link } from 'react-router-dom';
-import { Orders } from '@tiste-monorepo/orders' 
 
 
 const StyledApp = styled.div`
@@ -10,7 +9,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <Orders />
+      Hello Edur
     </StyledApp>
   );
 }
